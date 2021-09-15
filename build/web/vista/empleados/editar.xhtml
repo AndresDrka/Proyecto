@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../../css/bootstrap.min.css"></link>
+        <link rel="shortcut icon" href="../../../img/Maracawa icono.jpeg"></link>
+        <link rel="stylesheet" href="../../css/datatables.min.css"></link>
+        <link rel="stylesheet" href="../../css/productos.css"></link>
+    </head>
+    <body>
+        <div class="container mt-4 mb-2"  >
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="#{msjTitulos.crearEmpleado}"/></h1>
+               
+                <div class="row">
+                        <div class="col">
+                            <h:outputLabel value="#{msjTextoCorto.empleado}:"  for="idUsuarios" />
+                            <h:selectOneMenu id="idUsuarios" value="#{usuariosControlador.usuarios.idUsuarios}" title="#{msjTextoCorto.Idusuario}" required="true" requiredMessage="#{msjTextoLargo.iem}" class="form-control">
+                        <f:selectItem itemValue="" itemLabel="     " />
+                        <f:selectItems value="#{usuariosControlador.consultar()}" var="usu" itemValue="#{usu.idUsuarios}" itemLabel="#{usu.nombre1} #{usu.apellido1}"/>
+                    </h:selectOneMenu>
+                             <h:messages for="idUsuarios" style="color: red"/>
+                        </div>
+                    <div class="col">
+                        <h:outputLabel value="#{msjTextoCorto.Cargo}:" for="idCargo" />
+                        <h:selectOneMenu id="idCargo" value="#{cargo.cargo.idCargo}" title="#{msjTextoCorto.Cargo}" required="true" requiredMessage="#{msjTextoLargo.icarem}" class="form-control">
+                        <f:selectItem itemValue="" itemLabel="     " />
+                        <f:selectItems value="#{cargo.consultar()}" var="car" itemValue="#{car.idCargo}" itemLabel="#{car.cargo}"/>
+                    </h:selectOneMenu>
+                         <h:messages for="idCargo" style="color: red"/>
+                    </div>
+                </div>
+                <br></br>
+              <div class="form-group">
+                  <h:commandButton value="#{msjBoton.editar}" action="#{empleadoControlador.editar()}" class="btn btn-success" ></h:commandButton>
+                  <h:commandLink  action="#{empleadoControlador.volver()}" class="btn btn-primary"> <i class="fas fa-arrow-circle-left"></i>#{msjBoton.volver}</h:commandLink>
+
+                    </div>
+            </h:form>
+        </f:view>
+        </div>
+                <script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js" data-auto-replace-svg="nest"></script>
+        <script src="../../js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../js/popper.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <!--<script src="../../js/principal.js"></script>-->
+        <script src="../../js/datatables.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css"></script>
+    </body>
+    
+</html>

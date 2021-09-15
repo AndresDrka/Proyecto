@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../../css/bootstrap.min.css"></link>
+        <link rel="shortcut icon" href="../../../img/Maracawa icono.jpeg"></link>
+        <link rel="stylesheet" href="../../css/datatables.min.css"></link>
+        <link rel="stylesheet" href="../../css/productos.css"></link>
+
+    </head>
+    <body>
+        <div class="container mt-4 mb-2"  >
+            <f:view>
+
+
+                <h:form>
+                    <h1><h:outputText value="#{msjTitulos.crearpedidos}"/></h1>
+                    <div class="form-group">
+                        <h:outputLabel value="#{msjTextoCorto.Numpedidos}:" for="numPedido"  />
+                        <h:inputText id="numPedido"  pt:type="number"  pt:placeholder="#{msjTextoCorto.Numpedidos}"  value="#{pedidosControlador.pedidos.numPedido}" title="NumPedido"  class="form-control" required="true" requiredMessage="#{msjTextoLargo.pemun}">
+                        <f:validateLength class="validate" minimum="3" maximum="100" />
+                        </h:inputText>
+                         <h:messages for="numPedido" style="color: red"/>
+                    </div>
+                    <div class="form-group"> 
+                        <h:outputLabel value="#{msjTextoCorto.FechaPedido}:" for="fechaPedido" />
+                        <h:inputText id="fechaPedido" pt:type="date" value="#{pedidosControlador.pedidos.fechaPedido}" title="#{msjTextoLargo.FechaPedido}" class="form-control"  required="true" requiredMessage="#{msjTextoLargo.pefe}">
+                            <f:convertDateTime pattern="yyyy-MM-dd" />
+                        </h:inputText>
+                        <h:messages for="fechaPedido" style="color: red"/>
+                    </div>  
+                    <div class="form-group">
+                        <h:outputLabel value="#{msjTextoCorto.EstadoPedido}:" for="estadoPedido" />
+                        <h:inputText id="estadoPedido" pt:type="text"  pt:placeholder="#{msjTextoCorto.EstadoPedido}" value="#{pedidosControlador.pedidos.estadoPedido}" title="fechaPedido" class="form-control" required="true" requiredMessage="#{msjTextoLargo.peest}">
+                        <f:validateLength class="validate" minimum="3" maximum="100" />
+                        </h:inputText>
+                         <h:messages for="estadoPedido" style="color: red"/>
+                    </div>
+                    <div class="form-group"> 
+                        <h:outputLabel value="#{msjTextoCorto.ValorTotal}:" for="valorTotal" />
+                        <h:inputText id="valorTotal"  pt:type="number"  pt:placeholder="#{msjTextoLargo.ValorTotal}" value="#{pedidosControlador.pedidos.valorTotal}" title="" required="true"  class="form-control" requiredMessage="#{msjTextoLargo.pevar}">
+                        <f:validateLength class="validate" minimum="3" maximum="100" />
+                        </h:inputText>
+                         <h:messages for="valorTotal" style="color: red"/>
+                    </div>
+                    <div class="row">
+                        <div class="col"> 
+                            <h:outputLabel value="#{msjTextoCorto.cliente}:" for="idCliente" />
+                            <h:selectOneMenu id="idCliente" value="#{pedidosControlador.cliente.idCliente}" title="IdCliente" class="form-control" required="true" requiredMessage="#{msjTextoLargo.pecli}">
+                                <f:selectItem itemValue="" itemLabel="     " />
+                                <f:selectItems value="#{clienteControlador.consultar()}" var="cli" itemValue="#{cli.idCliente}" itemLabel="#{cli.idUsuarios.nombre1} #{cli.idUsuarios.apellido1}  #{cli.restaurante}"/>
+                            </h:selectOneMenu>
+                             <h:messages for="idCliente" style="color: red"/>
+                        </div>
+                        <div class="col"> 
+                            <h:outputLabel value="#{msjTextoCorto.empleado}:" for="idEmpleado" />
+                            <h:selectOneMenu id="idEmpleado" value="#{pedidosControlador.empleado.idEmpleado}" title="idEmpleado" class="form-control"  required="true" requiredMessage="#{msjTextoLargo.peem}">
+                                <f:selectItem itemValue="" itemLabel="     " />
+                                <f:selectItems value="#{empleadoControlador.consultar()}" var="emp" itemValue="#{emp.idEmpleado}"  itemLabel="#{emp.idUsuarios.nombre1} #{emp.idUsuarios.apellido1} " />
+                            </h:selectOneMenu>
+                             <h:messages for="idEmpleado" style="color: red"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <h:commandButton value="#{msjBoton.agregar}" action="#{pedidosControlador.crear()}" class="btn btn-success" ></h:commandButton>&#160;
+                        <h:commandButton value="#{msjBoton.volver}"  action="#{pedidosControlador.volver()}" class="btn btn-primary" > </h:commandButton>
+
+
+                    </div> 
+                </h:form>
+            </f:view>
+
+        </div>
+        <script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js" data-auto-replace-svg="nest"></script>
+        <script src="../../js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../js/popper.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <!--<script src="../../js/principal.js"></script>-->
+        <script src="../../js/datatables.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css"></script>
+    </body>
+</html>

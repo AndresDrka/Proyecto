@@ -1,0 +1,184 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+
+}
+body{
+    background-image: url(../img/fondo2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#error{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+      
+}
+.fondo-nav{
+    background-color: rgb(98, 206, 36);
+    
+}
+.modal-body input:valid{
+    border: 2px solid green;
+}
+.modal-body input:invalid{
+    border: 2px solid red;
+}
+
+.logotipo img{
+    width: 70%;
+    height: auto;
+    margin: 80px auto ;
+    display: block;
+    border-radius: 60px;
+}
+.warpper{
+    
+    width: 90%;
+    height: 20%;
+    margin:05% auto;
+    margin-bottom: 80px;
+    border: solid 2px rgb(231, 157, 20);
+    padding: 2%;
+    border-radius: 15px;
+    text-align: center;
+}
+.warpper a{
+    text-decoration: none;
+
+}
+.warpper button{
+    font-size: 25px;
+    width: 30%;
+    display: block;
+    margin: 20px auto ;
+    align-self: auto;
+    color: black;
+    
+}
+.warpper button{
+    background-color:  rgba(240, 248, 255, 0.493);
+    border: 2px solid rgb(231, 157, 20);
+
+}
+.warpper button:hover{
+    background-color: rgba(203, 241, 33, 0.493);
+    border: 2px solid rgb(98, 206, 36);
+}
+
+
+.redSocial{
+    width: 40%;
+    height: 100px;
+    margin:  auto; 
+}
+
+.redSocial img{
+    
+    width: 70px;
+    height: 70px;
+    margin: 25px 41px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.mb-3{
+    width: 95%;
+    margin: auto;
+    background-color: rgba(203, 241, 33, 0.493);
+    color: black;
+}
+.card-body{
+    width: 100%;
+    text-align: justify;
+    
+    padding: 50px;
+    font-size: 20px;
+    
+    
+}
+iframe,.cold-md-4 img{
+    width: 100%;
+    height: 60%;
+    margin: 20% 20px;
+
+}
+.card-title{
+    font-size:25px;
+    font-weight: bold; 
+    text-align: center;
+    color: black;
+
+}
+#Galería, #Comentarios{
+   margin: 100px auto;
+}
+#Galería .card-title, #Comentarios .card-title{
+    font-size: 30px;
+    display: block;
+    background-color: rgba(203, 241, 33, 0.493);
+    padding: 20px; 
+}
+.carousel{
+    width: 60%;
+    height: 600px;
+    margin: 40px auto;
+    
+}
+.carousel img{
+    widows: 100%;
+    height: 600px;
+}
+
+#Comentarios form{
+    width: 50%;
+    margin: auto;
+    font-size: 24px;
+    color: black;
+    border: solid 2px rgb(231, 157, 20);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+textarea{
+    resize: vertical;
+    max-height: 300px;
+    min-height: 100px;
+}
+
+
+
+#Comentarios form input:focus, #Comentarios form textarea:focus{
+    border: 2px solid rgb(231, 157, 20);
+}
+
+#Comentarios form button{
+    background-color:  rgba(240, 248, 255, 0.493);
+    border: 2px solid rgb(231, 157, 20);
+    color: black;
+}
+#Comentarios form button:hover{
+    background-color: rgba(203, 241, 33, 0.493);
+    border: 2px solid rgb(98, 206, 36);
+}
+.container-fluid{
+    height: 250px;
+}    
+
+
+.cart_anchor{ 
+    float:right; 
+    vertical-align:top; 
+    background: url('images/cart-icon.png') no-repeat center center / 100% auto;
+    width: 50px;
+    height: 50px; 
+    margin-bottom: 50px;
+}   

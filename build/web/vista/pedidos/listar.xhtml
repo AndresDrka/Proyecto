@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <link rel="shortcut icon" href="../../../../img/Maracawa icono.jpeg"></link>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/productos.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/datatables.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="main-container">
+        <f:view>
+
+            <div id="boton"><a href="crear.xhtml" class="btn btn-primary"><i class="fas fa-plus-circle"></i> #{msjBoton.agregar}</a></div>
+            <h:form>
+                <h1><h:outputText value="#{msjTitulos.pedidos}"/></h1>
+                <h:dataTable value="#{pedidosControlador.consultar()}" var="item" class="table table-striped display" id="tblusers">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.Numpedidos}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.numPedido}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.FechaPedido}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fechaPedido}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.EstadoPedido}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.estadoPedido}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.ValorTotal}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.valorTotal}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.cliente}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idCliente}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.empleado}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idEmpleado}"/>
+                    </h:column>
+                    <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msjTextoCorto.opciones}"/>
+                            </f:facet>
+                        <h:commandLink  class="btn btn-success" action="#{pedidosControlador.preEditar(item)}"> <i class="fas fa-edit"></i></h:commandLink>&#160;
+                        <h:commandLink  class="btn btn-danger" action="#{pedidosControlador.eliminar(item)}"> <i class="fas fa-trash-alt"></i></h:commandLink>
+                        </h:column> 
+                    
+                </h:dataTable>
+            </h:form>
+        </f:view>
+        </div>
+    </body>
+</html>

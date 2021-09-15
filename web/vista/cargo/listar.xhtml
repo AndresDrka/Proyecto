@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <link rel="shortcut icon" href="../../../../img/Maracawa icono.jpeg"></link>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <link href="../../css/productos.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="../../css/datatables.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+         <div id="main-container">
+        <f:view>
+
+        <div id="boton"><a href="crear.xhtml" class="btn btn-primary"><i class="fas fa-plus-circle"></i> #{msjBoton.agregar}</a></div>
+            <h:form>
+                <h1><h:outputText value="#{msjTitulos.cargo}"/></h1>
+                <h:dataTable value="#{cargo.consultar()}" var="item" class="table table-striped display">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.Cargo}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idCargo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.Cargo}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cargo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.Sueldo}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.sueldo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msjTextoCorto.idTareaturno}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idTurno.turnoAsignado}"/>
+                    </h:column>
+                      <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msjTextoCorto.opciones}"/>
+                            </f:facet>
+                          <h:commandLink  class="btn btn-success" action="#{cargo.preEditar(item)}"> <i class="fas fa-edit"></i></h:commandLink>&#160;
+                          <h:commandLink  class="btn btn-danger" action="#{cargo.eliminar(item)}"> <i class="fas fa-trash-alt"></i></h:commandLink>
+                        </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+         </div>
+              <script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js" data-auto-replace-svg="nest"></script>
+
+        <script src="../../js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../js/popper.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/principal.js"></script>
+
+        <script src="../../js/datatables.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js" type="text/javascript"></script>
+       
+
+    </body>
+</html>

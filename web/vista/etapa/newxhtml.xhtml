@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="IdEtapa:" for="idEtapa" />
+                    <h:inputText id="idEtapa" value="#{etapaProduccionControlador.etapaProduccion.idEtapa}" title="IdEtapa" required="true" requiredMessage="The IdEtapa field is required."/>
+                    <h:outputLabel value="Etapa:" for="etapa" />
+                    <h:inputText id="etapa" value="#{etapaProduccionControlador.etapaProduccion.etapa}" title="Etapa" required="true" requiredMessage="The Etapa field is required."/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </body>
+</html>

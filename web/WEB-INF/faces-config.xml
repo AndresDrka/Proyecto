@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <application>
+        <locale-config>
+            <default-locale>es</default-locale>
+            <supported-locale>es</supported-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>languages.btn.botones</base-name>
+            <var>msjBoton</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>langugage.tex.titulos</base-name>
+            <var>msjTitulos</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>language.texL.TextoLargo</base-name>
+            <var>msjTextoLargo</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>language.sup.Subtitulos</base-name>
+            <var>msjSubtitulos</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>language.texc.TextoCorto</base-name>
+            <var>msjTextoCorto</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>language.dash.dashboards</base-name>
+            <var>msjdashboards</var>
+        </resource-bundle>
+    </application>
+</faces-config>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Inicio</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>        
+
+        <h:form>
+
+            <h:outputLabel for="email" value="Correo:" class="col-form-label"></h:outputLabel>            
+            <h:inputText value="#{loginController.usuario.correo}" required="true" class="form-control"></h:inputText>
+            <h:message for="email" errorClass="text-danger"/>
+            <br></br>
+
+            <h:outputLabel for="pass" value="Pass:" class="col-form-label"></h:outputLabel>            
+            <h:inputSecret value="#{loginController.usuario.contrasena}" required="true" class="form-control"></h:inputSecret>
+            <h:message for="pass" errorClass="text-danger"/>
+            <br></br>
+            <a href="vista/emailautonomo/for.xhtml">Recuperar contraseña</a> <br />
+
+            <h:commandButton value="Iniciar Sesion" class="btn btn-primary" action="#{loginController.iniciarSesion()}"/>
+            <!--  <div class="dropdown">
+                                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            #{msjBoton.idioma}
+        </button>
+            <f:view>
+                <h:form>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <c:forEach items="#{sessionControlador.supportLanguages}" var="idioma">
+                            <h:commandLink class="dropdown-item" action="#{sessionControlador.cambiarIdioma(idioma)}" style="color: #000; display: block; text-align: center; text-transform: uppercase; font-weight: bold; border-bottom: 1px solid rgba(0,0,0,.2)">
+            #{idioma.language}
+        </h:commandLink>
+    </c:forEach>
+</div>
+</h:form>
+</f:view>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</div>-->
+        </h:form>
+
+
+        <h:messages globalOnly="true" showDetail="true" fatalClass="text-danger" infoClass="text-success"/>
+
+
+    </h:body>
+</html>
+
